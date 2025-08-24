@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style> {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffeb3b;
+    text-shadow: 3px 3px 0 #000;
+    margin-bottom: 5px;
+}
+.subtitle {
+    color: #fff;
+    font-style: italic;
+    font-size: 0.9em;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.nav-link:hover {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+}
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.funny-stats {
+    margin: 20px 0;
+    list-style: none;
+}
+.funny-stats li {
+    margin: 10px 0;
+    color: #fff;
+    font-size: 1.1em;
+}
+.ct-button {
+    background: linear-gradient(45deg, #ef0d0d, #ffeb3b); 
+    border: none;
+    padding: 15px 30px; 
+    font-size: 1.3em; 
+    font-weight: bold;
+    border-radius: 520px;
+    cursor: pointer;
+    transition: all .2s ease;      
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.ct-button:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+.spin-on-hover {
+    transition: transform 0.5s ease;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.spin-on-hover:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+.shake-on-hover {
+    transition: transform 0.3s ease;
+}
+
+.shake-on-hover:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px) rotate(-5deg); }
+    75% { transform: translateX(5px) rotate(5deg); }
+}
+.section {
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-shadow: 2px 2px 0 #000000;  
+
+}
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.feature-card, .hero-card, .meme-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); 
+}
+.feature-card:hover, .hero-card:hover, .meme-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.feature-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+.heroes-grid, .memes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.footer {
+    text-align: center;
+    color: #fff;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-top: 50px;
+}
+.easter-egg {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffeb3b;
+    color: #000;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite;
+}
+
+keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}</style>
+        </head>
+        <body>
+            
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment Of Legend</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap" rel="stylesheet"> <!--Это шрифт из библеотеки Google-->
+
+
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">
+                    <h1>Moment Of Legend</h1>
+                    <span class="subtitle">Скачай и наслаждайся вирусами</span>
+                </div>
+                    <a href="https://t.me/QuorvoxTeam" class="nav-link" target="_blank">Об нас</a>
+                    <a href="https://t.me/QuorvoxTeam" class="nav-link" target="_blank">Герои</a>
+                    <a href="https://t.me/seneioral" class="nav-link" target="_blank">Скачать</a>
+            </nav>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Скачай и стань про игроком!</h2>
+                <font color="black">Скачай да</font> 
+                <ul class="funny-stats">
+                    <li>Чистые проигрыши</li>
+                    <li>Узнаете более 50 новых ругательств</li>
+                    <li>Разбито 40 клавиатур</li>
+                    <li>Виновны тимейты</li>
+                </ul>
+                <button href="https://t.me/seneioral" class="ct-button" target="_blank">Скачать</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://ecoportal.su/public/201811/22.jpg" width="540" height="490" class="spin-on-hover" title="еее! Я тут"> 
+            </div>
+        </section>
+        <section id="about" class="section">
+            <h2>Почему MoL?</h2> 
+                <font color="White">Та мы хз</font>
+            <div class="features">
+                <div class="feature-card">
+                   <img src="https://sun9-30.userapi.com/impg/2Oqv4LpuJL7xnCPhCbuymPy8axKUQC08FrEywQ/jIythwbWKQw.jpg?size=604x428&amp;quality=96&amp;sign=2f851a144c7c1f7f4a5ef120fb197b95&amp;type=album" width="260" height="120"> 
+                    <h3>Типа страшно 😱</h3> 
+                    <p>Сражайся и бойся так как будто ты играешь финал!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Простая игра</h3>
+                    <p>Она даже не работает* <br><small>Мы в душе не чаем, как это исправить</small></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧘‍♂️</div> 
+                    <h3>Лучшие комьюнити</h3>
+                    <p>Всегда подержат и успокоят если ты спокоен<br><small>С советом удалить игру</small></p>
+                </div>
+            </div>
+        </section>
+        <section id="heroes" class="section">
+            <h2>Наши герои</h2>
+            <div class="heroes-grid">
+                <div class="hero-card">
+                    <img src="https://images.1v9.gg/carry%20dota%202-e3c83a1b1ea5.webp" width="200" height="200" class="spin-on-hover" title="Это наши герои, Dota им не нужна">
+                    <h3>Типа так как то</h3>
+                    <p>Бери его и не пожалеешь, наверное</p>
+                </div>
+                <div class="hero-card">
+                    <img src="https://avatars.mds.yandex.net/i?id=bc68e40dd12d36ce94fe4562b0f3fae0_l-5145180-images-thumbs&amp;n=13" width="200" height="200" class="spin-on-hover" title="Хоп">
+                    <h3>Всё проваливай</h3>
+                    <p>Ладно, оставайся</p>
+                </div>
+                <div class="hero-card">
+                    <img src="https://www.ferra.ru/thumb/860x0/filters:quality/imgs/2018/11/23/15/2459237/8aa5a7f8ad953b5a7e789e08f9c3fedcc2341a1c.jpg" width="200" height="200" class="spin-on-hover" title="Правда!">
+                    <h3>У нас самый развитый киберспорт</h3>
+                    <p>Всегда на пике популярности в своём селе</p>
+                </div>
+            </div>
+        </section>
+        <section id="memes" class="section">
+            <h2>Мемы от сообщества</h2>
+            <font color="White">У нас его нет, но скоро будет. Будет же?</font>
+                </section></div>
+            
+        
+        <footer class="footer">
+            <p>Moment of legend - типа самая лучшая игра </p>
+            <p>Кто сказал об этом сайте тот лох (я не в счёт)</p>
+        </footer>
+    
+    <div class="easter-egg" onclick="this.style.display='none'">
+        🎮 Нажми и получи + 100 к файтам на минималках
+    </div>
+
+
+            <script></script>
+        
+    
+</body>
